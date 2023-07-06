@@ -1,0 +1,84 @@
+{
+      "storage": [
+            {
+                  "astId": 0,
+                  "contract": "Blacksmith",
+                  "label": "Ownable_own__owner",
+                  "offset": 0,
+                  "slot": "0",
+                  "type": "address"
+            },
+            {
+                  "astId": 1,
+                  "contract": "Blacksmith",
+                  "label": "ReentrancyGuard_own__status",
+                  "offset": 0,
+                  "slot": "1",
+                  "type": "uint256"
+            },
+            {
+                  "astId": 3,
+                  "contract": "Blacksmith",
+                  "label": "governance",
+                  "offset": 0,
+                  "slot": "3",
+                  "type": "address"
+            },
+            {
+                  "astId": 4,
+                  "contract": "Blacksmith",
+                  "label": "treasury",
+                  "offset": 0,
+                  "slot": "4",
+                  "type": "address"
+            },
+            {
+                  "astId": 5,
+                  "contract": "Blacksmith",
+                  "label": "weeklyTotal",
+                  "offset": 0,
+                  "slot": "5",
+                  "type": "uint256"
+            },
+            {
+                  "astId": 6,
+                  "contract": "Blacksmith",
+                  "label": "totalWeight",
+                  "offset": 0,
+                  "slot": "6",
+                  "type": "uint256"
+            },
+            {
+                  "astId": 10,
+                  "contract": "Blacksmith",
+                  "label": "allowBonusTokens",
+                  "offset": 0,
+                  "slot": "10",
+                  "type": "mapping(address => uint8)"
+            }
+      ],
+      "types": {
+            "address": {
+                  "encoding": "inplace",
+                  "label": "address",
+                  "numberOfBytes": "20"
+            },
+            "uint256": {
+                  "encoding": "inplace",
+                  "label": "uint256",
+                  "numberOfBytes": "32"
+            },
+            "mapping(address => uint8)": {
+                  "encoding": "mapping",
+                  "key": "address",
+                  "label": "mapping(address => uint8)",
+                  "numberOfBytes": "32",
+                  "value": "uint8"
+            },
+            "uint8": {
+                  "encoding": "inplace",
+                  "label": "uint8",
+                  "numberOfBytes": "1"
+            }
+      }
+}

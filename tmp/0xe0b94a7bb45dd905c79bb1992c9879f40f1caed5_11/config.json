@@ -1,0 +1,11 @@
+{
+      "sourcecode_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0xe0b94a7bb45dd905c79bb1992c9879f40f1caed5/SourceCode/contracts/Blacksmith.sol",
+      "name": "Blacksmith",
+      "compiler_version": "v0.7.4+commit.3f05b770",
+      "arguments": "0000000000000000000000005d8d9f5b96f4438195be9b99eee6118ed4304286000000000000000000000000c698645b5c5b662b52a5a5c092804f23e3f5b4c5000000000000000000000000859eefc267671595d987d0f6589d7771d4877113",
+      "abi_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0xe0b94a7bb45dd905c79bb1992c9879f40f1caed5/0xe0b94a7bb45dd905c79bb1992c9879f40f1caed5.abi",
+      "transactions_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0xe0b94a7bb45dd905c79bb1992c9879f40f1caed5/txs.json",
+      "tx_decode_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0xe0b94a7bb45dd905c79bb1992c9879f40f1caed5/tx_decode.json",
+      "allstatechanges_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0xe0b94a7bb45dd905c79bb1992c9879f40f1caed5/statechanges.txt",
+      "storageLayout_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0xe0b94a7bb45dd905c79bb1992c9879f40f1caed5/storage.json"
+}

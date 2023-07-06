@@ -1,0 +1,615 @@
+// Declarations for Smart Contract Runtime Invariant Identification
+// Declarations automatically written by Liu Ye 
+
+decl-version 2.0
+var-comparability implicit
+ppt TransparentUpgradeableProxy:::Object
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags non_null
+  comparability 0
+
+
+ppt TransparentUpgradeableProxy.admin():::ENTER
+ppt-type enter
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.admin():::EXIT1
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.admin():::EXIT2
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.changeAdmin(address):::ENTER
+ppt-type enter
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable newAdmin
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.changeAdmin(address):::EXIT1
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable newAdmin
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.changeAdmin(address):::EXIT2
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable newAdmin
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.implementation():::ENTER
+ppt-type enter
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.implementation():::EXIT1
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.implementation():::EXIT2
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.upgradeTo(address):::ENTER
+ppt-type enter
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable newImplementation
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.upgradeTo(address):::EXIT1
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable newImplementation
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.upgradeTo(address):::EXIT2
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable newImplementation
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.upgradeToAndCall(address,bytes):::ENTER
+ppt-type enter
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable newImplementation
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable data
+    var-kind variable
+    dec-type bytes
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 7
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.upgradeToAndCall(address,bytes):::EXIT1
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable newImplementation
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable data
+    var-kind variable
+    dec-type bytes
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 7
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt TransparentUpgradeableProxy.upgradeToAndCall(address,bytes):::EXIT2
+ppt-type subexit
+parent parent TransparentUpgradeableProxy:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type TransparentUpgradeableProxy
+  rep-type hashcode
+  flags is_param nomod
+  parent TransparentUpgradeableProxy:::Object 1
+variable newImplementation
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable data
+    var-kind variable
+    dec-type bytes
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 7
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+TransparentUpgradeableProxy.upgradeTo(address):::ENTER
+this_invocation_nonce
+32
+this
+192794888
+1
+newImplementation  
+"0x0cd79409ed80d8a153a3c729aa1f8b5d44a29282"
+1
+msg.sender
+"0x40151e5d012e7de6000f7144288ef50af78882be"
+1
+msg.value
+0
+1
+block.timestamp
+1639449687
+1
+
+
+TransparentUpgradeableProxy.upgradeTo(address):::EXIT1
+this_invocation_nonce
+32
+this
+192794888
+1
+newImplementation  
+"0x0cd79409ed80d8a153a3c729aa1f8b5d44a29282"
+1
+msg.sender
+"0x40151e5d012e7de6000f7144288ef50af78882be"
+1
+msg.value
+0
+1
+block.timestamp
+1639449687
+1
+
+
+TransparentUpgradeableProxy.upgradeTo(address):::ENTER
+this_invocation_nonce
+61
+this
+192794888
+1
+newImplementation  
+"0x99309d2e7265528dc7c3067004cc4a90d37b7cc3"
+1
+msg.sender
+"0x40151e5d012e7de6000f7144288ef50af78882be"
+1
+msg.value
+0
+1
+block.timestamp
+1639547760
+1
+
+
+TransparentUpgradeableProxy.upgradeTo(address):::EXIT1
+this_invocation_nonce
+61
+this
+192794888
+1
+newImplementation  
+"0x99309d2e7265528dc7c3067004cc4a90d37b7cc3"
+1
+msg.sender
+"0x40151e5d012e7de6000f7144288ef50af78882be"
+1
+msg.value
+0
+1
+block.timestamp
+1639547760
+1
+

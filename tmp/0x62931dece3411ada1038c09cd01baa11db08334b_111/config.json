@@ -1,0 +1,11 @@
+{
+      "sourcecode_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x62931dece3411ada1038c09cd01baa11db08334b/SourceCode/contracts/LPFarmV2.sol",
+      "name": "LPFarmingV2",
+      "compiler_version": "v0.8.4+commit.c7e474f2",
+      "arguments": "00000000000000000000000021381e026ad6d8266244f2a583b35f9e4413fa2a000000000000000000000000b058b2612d4cd6e548438b10cb57371bbae13328000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec7000000000000000000000000000000000000000000000000000000000000003c00000000000000000000000098a8f350853a1451d7e961480c1fbfdac39f8efc",
+      "abi_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x62931dece3411ada1038c09cd01baa11db08334b/0x62931dece3411ada1038c09cd01baa11db08334b.abi",
+      "transactions_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x62931dece3411ada1038c09cd01baa11db08334b/txs.json",
+      "tx_decode_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x62931dece3411ada1038c09cd01baa11db08334b/tx_decode.json",
+      "allstatechanges_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x62931dece3411ada1038c09cd01baa11db08334b/statechanges.txt",
+      "storageLayout_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x62931dece3411ada1038c09cd01baa11db08334b/storage.json"
+}

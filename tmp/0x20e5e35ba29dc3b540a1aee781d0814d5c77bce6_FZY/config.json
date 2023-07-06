@@ -1,0 +1,11 @@
+{
+      "sourcecode_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x20e5e35ba29dc3b540a1aee781d0814d5c77bce6/SourceCode/@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol",
+      "name": "TransparentUpgradeableProxy",
+      "compiler_version": "v0.8.2+commit.661d1103",
+      "arguments": "000000000000000000000000e25a6ec9cf2ee513343a02ceb0a36c58dbb9ee65000000000000000000000000d6ce6c06bd15c1ea39d5eb509db25e9bffba0a43000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000048129fc1c00000000000000000000000000000000000000000000000000000000",
+      "abi_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x20e5e35ba29dc3b540a1aee781d0814d5c77bce6/0x20e5e35ba29dc3b540a1aee781d0814d5c77bce6.abi",
+      "transactions_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x20e5e35ba29dc3b540a1aee781d0814d5c77bce6/txs.json",
+      "tx_decode_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x20e5e35ba29dc3b540a1aee781d0814d5c77bce6/tx_decode.json",
+      "allstatechanges_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x20e5e35ba29dc3b540a1aee781d0814d5c77bce6/statechanges.txt",
+      "storageLayout_file": "/home/fangzy/workplace/InvCon/invcon/tmp/0x20e5e35ba29dc3b540a1aee781d0814d5c77bce6/storage.json"
+}

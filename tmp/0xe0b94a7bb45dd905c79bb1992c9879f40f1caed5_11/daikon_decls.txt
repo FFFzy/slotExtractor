@@ -1,0 +1,5956 @@
+// Declarations for Smart Contract Runtime Invariant Identification
+// Declarations automatically written by Liu Ye 
+
+decl-version 2.0
+var-comparability implicit
+ppt Blacksmith:::Object
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags non_null
+  comparability 0
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+
+
+ppt Blacksmith.addBonusToken(address,address,uint256,uint256,uint256):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _bonusToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _startTime
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable _endTime
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable _totalBonus
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.addBonusToken(address,address,uint256,uint256,uint256):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _bonusToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _startTime
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable _endTime
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable _totalBonus
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.addBonusToken(address,address,uint256,uint256,uint256):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _bonusToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _startTime
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable _endTime
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable _totalBonus
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.addPool(address,uint256):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _weight
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.addPool(address,uint256):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _weight
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.addPool(address,uint256):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _weight
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.addPools(address[],uint256[]):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpTokens
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _lpTokens[..]
+    var-kind array
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    enclosing-var _lpTokens
+    flags is_param non_null is_readonly nomod
+    comparability 8[11]
+variable _weights
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _weights[..]
+    var-kind array
+    array 1
+    dec-type uint256[]
+    rep-type java.math.BigInteger[]
+    enclosing-var _weights
+    flags is_param non_null is_readonly nomod
+    comparability 5[11]
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.addPools(address[],uint256[]):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpTokens
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _lpTokens[..]
+    var-kind array
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    enclosing-var _lpTokens
+    flags is_param non_null is_readonly nomod
+    comparability 8[11]
+variable _weights
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _weights[..]
+    var-kind array
+    array 1
+    dec-type uint256[]
+    rep-type java.math.BigInteger[]
+    enclosing-var _weights
+    flags is_param non_null is_readonly nomod
+    comparability 5[11]
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.addPools(address[],uint256[]):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpTokens
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _lpTokens[..]
+    var-kind array
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    enclosing-var _lpTokens
+    flags is_param non_null is_readonly nomod
+    comparability 8[11]
+variable _weights
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _weights[..]
+    var-kind array
+    array 1
+    dec-type uint256[]
+    rep-type java.math.BigInteger[]
+    enclosing-var _weights
+    flags is_param non_null is_readonly nomod
+    comparability 5[11]
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.claimRewards(address):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.claimRewards(address):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.claimRewards(address):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.claimRewardsForPools(address[]):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpTokens
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _lpTokens[..]
+    var-kind array
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    enclosing-var _lpTokens
+    flags is_param non_null is_readonly nomod
+    comparability 8[11]
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.claimRewardsForPools(address[]):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpTokens
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _lpTokens[..]
+    var-kind array
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    enclosing-var _lpTokens
+    flags is_param non_null is_readonly nomod
+    comparability 8[11]
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.claimRewardsForPools(address[]):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpTokens
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _lpTokens[..]
+    var-kind array
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    enclosing-var _lpTokens
+    flags is_param non_null is_readonly nomod
+    comparability 8[11]
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.collectBonusDust(address):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.collectBonusDust(address):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.collectBonusDust(address):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.collectDust(address):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _token
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.collectDust(address):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _token
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.collectDust(address):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _token
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.deposit(address,uint256):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _amount
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.deposit(address,uint256):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _amount
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.deposit(address,uint256):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _amount
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.emergencyWithdraw(address):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.emergencyWithdraw(address):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.emergencyWithdraw(address):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.transferMintingRights(address):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _newAddress
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.transferMintingRights(address):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _newAddress
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.transferMintingRights(address):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _newAddress
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.transferOwnership(address):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable newOwner
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.transferOwnership(address):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable newOwner
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.transferOwnership(address):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable newOwner
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updateBonusTokenStatus(address,uint8):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _bonusToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _status
+    var-kind variable
+    dec-type uint8
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updateBonusTokenStatus(address,uint8):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _bonusToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _status
+    var-kind variable
+    dec-type uint8
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updateBonusTokenStatus(address,uint8):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _bonusToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _status
+    var-kind variable
+    dec-type uint8
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updatePool(address):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updatePool(address):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updatePool(address):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updatePoolWeights(address[],uint256[]):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpTokens
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _lpTokens[..]
+    var-kind array
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    enclosing-var _lpTokens
+    flags is_param non_null is_readonly nomod
+    comparability 8[11]
+variable _weights
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _weights[..]
+    var-kind array
+    array 1
+    dec-type uint256[]
+    rep-type java.math.BigInteger[]
+    enclosing-var _weights
+    flags is_param non_null is_readonly nomod
+    comparability 5[11]
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updatePoolWeights(address[],uint256[]):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpTokens
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _lpTokens[..]
+    var-kind array
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    enclosing-var _lpTokens
+    flags is_param non_null is_readonly nomod
+    comparability 8[11]
+variable _weights
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _weights[..]
+    var-kind array
+    array 1
+    dec-type uint256[]
+    rep-type java.math.BigInteger[]
+    enclosing-var _weights
+    flags is_param non_null is_readonly nomod
+    comparability 5[11]
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updatePoolWeights(address[],uint256[]):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpTokens
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _lpTokens[..]
+    var-kind array
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    enclosing-var _lpTokens
+    flags is_param non_null is_readonly nomod
+    comparability 8[11]
+variable _weights
+    var-kind variable
+    dec-type hashcode
+    rep-type hashcode
+    flags is_param non_null is_readonly nomod
+    comparability 11
+variable _weights[..]
+    var-kind array
+    array 1
+    dec-type uint256[]
+    rep-type java.math.BigInteger[]
+    enclosing-var _weights
+    flags is_param non_null is_readonly nomod
+    comparability 5[11]
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updatePools(uint256,uint256):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _start
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable _end
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updatePools(uint256,uint256):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _start
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable _end
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updatePools(uint256,uint256):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _start
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable _end
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updateWeeklyTotal(uint256):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _weeklyTotal
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updateWeeklyTotal(uint256):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _weeklyTotal
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.updateWeeklyTotal(uint256):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _weeklyTotal
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.withdraw(address,uint256):::ENTER
+ppt-type enter
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _amount
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.withdraw(address,uint256):::EXIT1
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _amount
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+
+
+ppt Blacksmith.withdraw(address,uint256):::EXIT2
+ppt-type subexit
+parent parent Blacksmith:::Object 1
+ppt-type object
+variable this
+  var-kind variable
+  dec-type Blacksmith
+  rep-type hashcode
+  flags is_param nomod
+  parent Blacksmith:::Object 1
+variable this.Ownable_own__owner
+    var-kind field Ownable_own__owner
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.ReentrancyGuard_own__status
+    var-kind field ReentrancyGuard_own__status
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.governance
+    var-kind field governance
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.treasury
+    var-kind field treasury
+    enclosing-var this
+    dec-type address
+    rep-type java.lang.String
+    flags non_null
+    comparability 8
+    parent Blacksmith:::Object 1
+variable this.weeklyTotal
+    var-kind field weeklyTotal
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.totalWeight
+    var-kind field totalWeight
+    enclosing-var this
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags non_null
+    comparability 5
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens
+    var-kind field allowBonusTokens
+    enclosing-var this
+    dec-type mapping(address_=>_uint8)
+    rep-type hashcode
+    flags non_null
+    comparability 10
+variable this.allowBonusTokens[..]
+    var-kind array
+    enclosing-var this.allowBonusTokens
+    array 1
+    dec-type address[]
+    rep-type java.lang.String[]
+    flags non_null
+    comparability 8[11]
+    parent Blacksmith:::Object 1
+variable this.allowBonusTokens[..].getValue()
+    var-kind function getValue()
+    enclosing-var this.allowBonusTokens[..]
+    array 1
+    dec-type uint8[]
+    rep-type java.math.BigInteger[]
+    flags non_null
+    comparability 5[11]
+    parent Blacksmith:::Object 1
+variable _lpToken
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable _amount
+    var-kind variable
+    dec-type uint256
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable msg.sender
+    var-kind variable
+    dec-type address
+    rep-type java.lang.String
+    flags is_param non_null is_readonly nomod
+    comparability 8
+variable msg.value
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+variable block.timestamp
+    var-kind variable
+    dec-type uint
+    rep-type java.math.BigInteger
+    flags is_param non_null is_readonly nomod
+    comparability 5
+

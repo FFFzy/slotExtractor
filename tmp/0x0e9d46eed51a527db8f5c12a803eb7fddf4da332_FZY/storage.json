@@ -1,0 +1,88 @@
+{
+      "storage": [
+            {
+                  "astId": 0,
+                  "contract": "TokenERC20",
+                  "label": "name",
+                  "offset": 0,
+                  "slot": "0",
+                  "type": "string"
+            },
+            {
+                  "astId": 1,
+                  "contract": "TokenERC20",
+                  "label": "symbol",
+                  "offset": 0,
+                  "slot": "1",
+                  "type": "string"
+            },
+            {
+                  "astId": 2,
+                  "contract": "TokenERC20",
+                  "label": "decimals",
+                  "offset": 0,
+                  "slot": "2",
+                  "type": "uint8"
+            },
+            {
+                  "astId": 3,
+                  "contract": "TokenERC20",
+                  "label": "totalSupply",
+                  "offset": 0,
+                  "slot": "3",
+                  "type": "uint256"
+            },
+            {
+                  "astId": 4,
+                  "contract": "TokenERC20",
+                  "label": "balanceOf",
+                  "offset": 0,
+                  "slot": "4",
+                  "type": "mapping(address => uint256)"
+            },
+            {
+                  "astId": 5,
+                  "contract": "TokenERC20",
+                  "label": "allowance",
+                  "offset": 0,
+                  "slot": "5",
+                  "type": "mapping(address => mapping(address => uint256))"
+            }
+      ],
+      "types": {
+            "string": {
+                  "encoding": "bytes",
+                  "label": "string",
+                  "numberOfBytes": "32"
+            },
+            "uint8": {
+                  "encoding": "inplace",
+                  "label": "uint8",
+                  "numberOfBytes": "1"
+            },
+            "uint256": {
+                  "encoding": "inplace",
+                  "label": "uint256",
+                  "numberOfBytes": "32"
+            },
+            "mapping(address => uint256)": {
+                  "encoding": "mapping",
+                  "key": "address",
+                  "label": "mapping(address => uint256)",
+                  "numberOfBytes": "32",
+                  "value": "uint256"
+            },
+            "address": {
+                  "encoding": "inplace",
+                  "label": "address",
+                  "numberOfBytes": "20"
+            },
+            "mapping(address => mapping(address => uint256))": {
+                  "encoding": "mapping",
+                  "key": "address",
+                  "label": "mapping(address => mapping(address => uint256))",
+                  "numberOfBytes": "32",
+                  "value": "mapping(address => uint256)"
+            }
+      }
+}

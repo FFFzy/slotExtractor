@@ -1,0 +1,143 @@
+Daikon version 5.8.6, released December 2, 2020; http://plse.cs.washington.edu/daikon.
+Reading declaration files Processing trace data; reading 1 dtrace file:
+Warning: Daikon is using a dataflow hierarchy analysis on a data trace that does not appear to be over a program execution, consider running Daikon with the --nohierarchy flag.
+
+===========================================================================
+Blacksmith.claimRewards(address):::EXIT1
+this == orig(this)
+this.Ownable_own__owner == this.governance
+this.Ownable_own__owner == this.treasury
+this.Ownable_own__owner == orig(this.Ownable_own__owner)
+this.Ownable_own__owner == orig(this.governance)
+this.Ownable_own__owner == orig(this.treasury)
+this.ReentrancyGuard_own__status == orig(this.ReentrancyGuard_own__status)
+this.weeklyTotal == orig(this.weeklyTotal)
+this.totalWeight == orig(this.totalWeight)
+this.allowBonusTokens == orig(this.allowBonusTokens)
+_lpToken == orig(_lpToken)
+msg.sender == orig(msg.sender)
+msg.value == orig(msg.value)
+block.timestamp == orig(block.timestamp)
+this.ReentrancyGuard_own__status == 1
+this.weeklyTotal == 654000000000000000000
+this.totalWeight == 400
+this.allowBonusTokens has only one value
+msg.value == 0
+block.timestamp one of { 1606585253, 1607295589 }
+orig(this) has only one value
+orig(this.ReentrancyGuard_own__status) == 1
+orig(this.weeklyTotal) == 654000000000000000000
+orig(this.totalWeight) == 400
+orig(msg.value) == 0
+orig(block.timestamp) one of { 1606585253, 1607295589 }
+===========================================================================
+Blacksmith.claimRewardsForPools(address[]):::EXIT2
+this == orig(this)
+this.Ownable_own__owner == orig(this.Ownable_own__owner)
+this.ReentrancyGuard_own__status == orig(this.ReentrancyGuard_own__status)
+this.governance == this.treasury
+this.governance == orig(this.governance)
+this.governance == orig(this.treasury)
+this.weeklyTotal == orig(this.weeklyTotal)
+this.totalWeight == orig(this.totalWeight)
+this.allowBonusTokens == orig(this.allowBonusTokens)
+_lpTokens == orig(_lpTokens)
+msg.sender == orig(msg.sender)
+msg.value == orig(msg.value)
+block.timestamp == orig(block.timestamp)
+this.ReentrancyGuard_own__status == 1
+this.weeklyTotal == 654000000000000000000
+this.totalWeight == 10002
+this.allowBonusTokens has only one value
+msg.value == 0
+block.timestamp one of { 1609851165, 1610640473 }
+orig(this) has only one value
+orig(this.ReentrancyGuard_own__status) == 1
+orig(this.weeklyTotal) == 654000000000000000000
+orig(this.totalWeight) == 10002
+orig(_lpTokens) has only one value
+orig(msg.value) == 0
+orig(block.timestamp) one of { 1609851165, 1610640473 }
+===========================================================================
+Blacksmith.updateBonusTokenStatus(address,uint8):::EXIT1
+this == orig(this)
+this.ReentrancyGuard_own__status == orig(this.ReentrancyGuard_own__status)
+this.governance == this.treasury
+this.governance == orig(this.governance)
+this.governance == orig(this.treasury)
+this.weeklyTotal == orig(this.weeklyTotal)
+this.totalWeight == orig(this.totalWeight)
+this.allowBonusTokens == orig(this.allowBonusTokens)
+_bonusToken == orig(_bonusToken)
+_status == orig(_status)
+msg.sender == orig(msg.sender)
+msg.value == orig(msg.value)
+block.timestamp == orig(block.timestamp)
+this.ReentrancyGuard_own__status == 1
+this.weeklyTotal == 654000000000000000000
+this.totalWeight one of { 10001, 10002 }
+this.allowBonusTokens has only one value
+_status one of { 1, 2 }
+msg.value == 0
+block.timestamp one of { 1608666706, 1610501825 }
+orig(this) has only one value
+orig(this.ReentrancyGuard_own__status) == 1
+orig(this.weeklyTotal) == 654000000000000000000
+orig(this.totalWeight) one of { 10001, 10002 }
+orig(_status) one of { 1, 2 }
+orig(msg.value) == 0
+orig(block.timestamp) one of { 1608666706, 1610501825 }
+===========================================================================
+Blacksmith.updatePool(address):::EXIT1
+this == orig(this)
+this.Ownable_own__owner == orig(this.Ownable_own__owner)
+this.ReentrancyGuard_own__status == orig(this.ReentrancyGuard_own__status)
+this.governance == this.treasury
+this.governance == orig(this.governance)
+this.governance == orig(this.treasury)
+this.weeklyTotal == orig(this.weeklyTotal)
+this.allowBonusTokens == orig(this.allowBonusTokens)
+_lpToken == orig(_lpToken)
+msg.sender == orig(msg.sender)
+msg.value == orig(msg.value)
+msg.value == sum(this.allowBonusTokens[].getValue())
+block.timestamp == orig(block.timestamp)
+orig(msg.value) == sum(this.allowBonusTokens[].getValue())
+this.ReentrancyGuard_own__status == 1
+this.weeklyTotal == 654000000000000000000
+this.totalWeight one of { 10001, 10002 }
+this.allowBonusTokens has only one value
+msg.value == 0
+orig(this) has only one value
+orig(this.ReentrancyGuard_own__status) == 1
+orig(this.weeklyTotal) == 654000000000000000000
+orig(this.totalWeight) one of { 10001, 10002 }
+orig(msg.value) == 0
+sum(this.allowBonusTokens[].getValue()) == 0
+this.Ownable_own__owner != this.governance
+this.Ownable_own__owner != orig(_lpToken)
+this.Ownable_own__owner != orig(msg.sender)
+this.ReentrancyGuard_own__status < this.weeklyTotal
+this.ReentrancyGuard_own__status < this.totalWeight
+this.ReentrancyGuard_own__status < block.timestamp
+this.ReentrancyGuard_own__status < orig(this.weeklyTotal)
+this.ReentrancyGuard_own__status < orig(this.totalWeight)
+this.ReentrancyGuard_own__status < orig(block.timestamp)
+this.governance != orig(_lpToken)
+this.governance != orig(msg.sender)
+this.totalWeight < block.timestamp
+this.totalWeight < orig(this.weeklyTotal)
+this.totalWeight < orig(block.timestamp)
+msg.value < block.timestamp
+msg.value < orig(this.ReentrancyGuard_own__status)
+msg.value < orig(this.weeklyTotal)
+msg.value < orig(this.totalWeight)
+msg.value < orig(block.timestamp)
+block.timestamp < orig(this.weeklyTotal)
+orig(this.ReentrancyGuard_own__status) < orig(this.weeklyTotal)
+orig(this.ReentrancyGuard_own__status) < orig(this.totalWeight)
+orig(this.ReentrancyGuard_own__status) < orig(block.timestamp)
+orig(this.totalWeight) < orig(block.timestamp)
+orig(_lpToken) != orig(msg.sender)
+orig(msg.value) < orig(block.timestamp)
+Exiting Daikon.
