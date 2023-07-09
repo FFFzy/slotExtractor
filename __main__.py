@@ -1,41 +1,26 @@
-import argparse
 from extractor.main import main as extractor
-import consts.Config as config
-import os 
-from replay.Crawl2Process import Crawler
-
-def execute_command(args):
-    # config env
-    config.DEBUG = args.debug
-    config.CACHED = args.cached
-    config.ParserReadTransactionLimit = args.parserReadLimit
-    
-    if not os.path.exists(args.workspace):
-        os.makedirs(args.workspace)
-
-    crawler = Crawler(address = args.eth_address,  workdir=args.workspace)
-    result = crawler.crawl2process()
-    
-    if not args.crawl_only:
-        extractor(address = args.eth_address,  workdir=args.workspace,  contractName = result["name"], storageLayoutJson = result["storageLayout_file"],  input_abi = result["abi_file"],  input_state_change = result["allstatechanges_file"] ,  input_tx_receipt = result["tx_decode_file"])
+from crawl2process.Crawl2Process import Crawler
+import json
 
 def main():
-    parser = argparse.ArgumentParser(description='InvCon: A Dynamic Invariant Detector for Ethereum Smart Contracts!')
-    
-    parser.add_argument('--eth_address', type=str, required=True, 
-                        help='address of Ethereum smart contract')
-    parser.add_argument('--crawl_only', dest="crawl_only", action="store_true",
-                        help='crawl only data, default is false')
-    parser.add_argument('--debug', dest="debug", action="store_true",
-                        help='debug mode, default is false')
-    parser.add_argument('--cached', dest="cached", action="store_false",
-                        help='whethere using previous result, default is true')
-    parser.add_argument('--workspace', type=str, default = "./tmp", 
-                        help='workspace including contract source code, invariants (default is "./tmp")')  
-    parser.add_argument('--parserReadLimit', type=int, default=config.ParserReadTransactionLimit)
-                        # help=f'how many method invocations are used to infer likely invariants (default is {config.ParserReadTransactionLimit})')
-    args = parser.parse_args()
-    execute_command(args)
+    var_dict = json.load(open("./invs/0x62931dece3411ada1038c09cd01baa11db08334b/var_dict.json"))
+
+    transactions = []
+    workspace = "./tmp"
+    eth_address= "0x62931dece3411ada1038c09cd01baa11db08334b"
+    invspace = "./invs"
+
+    for blockIndex in var_dict:
+        blockNumber, Index = blockIndex.split("_")
+        var_dict[blockIndex]["transactionIndex"] = Index
+        var_dict[blockIndex]["blockNumber"] = str(var_dict[blockIndex]["blockNumber"])
+        transactions.append(var_dict[blockIndex])
+
+        crawler = Crawler(address = eth_address,  workdir=workspace, transactions = transactions)
+        result = crawler.crawl2process()
+        
+    # print("finish")
+        extractor(address = eth_address, blockNumber = blockNumber, Index = Index, workdir = invspace, contractName = result["name"], storageLayoutJson = result["storageLayout_file"], input_state_change = result["allstatechanges_file"], input_tx_receipt = result["transactions_file"])
 
 if __name__ ==  "__main__":
     main()

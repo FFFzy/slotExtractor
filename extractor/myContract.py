@@ -4,19 +4,8 @@ import math
 from web3 import Web3
 import traceback
 import math 
-import consts.Config as config
 from alive_progress import alive_bar
 INTERNAL_TRANSACTION="internal_transactions"
-
-# Comparability_Enum= 4
-# Comparability_Int = 5
-# Comparability_Mapping= 6
-# Comparability_String = 7
-# Comparability_Address = 8
-# Comparability_Boolean = 9
-# Comparability_Others = 10
-
-# Comparability_Indice = 11
 
 def toHex(val, size=8):
     # print(type(val))
@@ -260,7 +249,8 @@ def setValueForInplace(self, slot, value, additionalKeys=list()):
             return True 
         return False 
     except:
-        traceback.print_exc()
+        # traceback.print_exc()
+        pass
     return False
 
 def setValueForDynamicArray(self, slot, value,  additionalKeys=list()):
@@ -270,10 +260,10 @@ def setValueForDynamicArray(self, slot, value,  additionalKeys=list()):
     assert slot.startswith("0x") and value.startswith("0x")
    
     try:
-        if int(slot, 16) - self.firstElementSlot <=10 and int(slot, 16) - self.firstElementSlot >=0:
-            if config.DEBUG:
-                print("should find an array slot for ", slot,  int(slot, 16) - self.firstElementSlot)
-                print("condition: self.firstElementSlot + int(self.getBasecls().numOfBytes*(len(self.elements)+1)/32) - int(slot, 16) = ",self.firstElementSlot + int(self.getBasecls().numOfBytes*(len(self.elements)+1)/32) - int(slot, 16))
+        # if int(slot, 16) - self.firstElementSlot <=10 and int(slot, 16) - self.firstElementSlot >=0:
+        #     if config.DEBUG:
+        #         print("should find an array slot for ", slot,  int(slot, 16) - self.firstElementSlot)
+        #         print("condition: self.firstElementSlot + int(self.getBasecls().numOfBytes*(len(self.elements)+1)/32) - int(slot, 16) = ",self.firstElementSlot + int(self.getBasecls().numOfBytes*(len(self.elements)+1)/32) - int(slot, 16))
             
         if int(slot, 16) == self.slot:
             self.value = int(value, 16)
@@ -284,8 +274,8 @@ def setValueForDynamicArray(self, slot, value,  additionalKeys=list()):
 
         elif self.firstElementSlot <= int(slot, 16) \
         and int(slot, 16) <= (self.firstElementSlot + math.ceil(self.getBasecls().numOfBytes/32)*(len(self.elements)+1)):
-            if config.DEBUG:
-                print("find array slot...")
+            # if config.DEBUG:
+            #     print("find array slot...")
             index = int((int(slot, 16) - self.firstElementSlot) /math.ceil(self.getBasecls().numOfBytes/32))
             # TODO
             # Here, we assume every item in an array are stored at a new slot
@@ -294,12 +284,12 @@ def setValueForDynamicArray(self, slot, value,  additionalKeys=list()):
             elementSlot = index * math.ceil(self.getBasecls().numOfBytes/32) + self.firstElementSlot
             assert elementSlot <= int(slot, 16), "elementSlot must be less than or equal to slot"
             if index < len(self.elements):
-                if config.DEBUG:
-                    print("update item")
+                # if config.DEBUG:
+                #     print("update item")
                 self.elements[index].setValue(slot, value)
             else:
-                if config.DEBUG:
-                    print("create item")
+                # if config.DEBUG:
+                #     print("create item")
                 self.elements.append(self.getBasecls()(astId=self.astId, contract=self.contract, label="", offset=0, slot=elementSlot, type=self.getBasecls().label))
                 self.elements[-1].setValue(slot, value)
                 self.numOfItems = len(self.elements)
@@ -307,7 +297,6 @@ def setValueForDynamicArray(self, slot, value,  additionalKeys=list()):
     except:
         traceback.print_exc()
     return False 
-
 
 from functools import lru_cache
 @lru_cache
@@ -323,7 +312,6 @@ def soliditySha3(key, slot):
                 assert False, f"{key} is not supported"
     assert key >= 0
     return Web3.soliditySha3(["uint256", "uint256"], [key, slot])
-
 
 def setValueForMapping(self, slot, value, additionalKeys=list()):
     global ClassMapping
@@ -425,63 +413,6 @@ def _setValue(self, slot, value, additionalKeys=list()):
         return self.setValueForBytes(slot, value, additionalKeys)
     else:
         raise LookupError(f"unfounded variable type {self}")
-
-def printData(self, globalTaintedKeysRecorderSet=dict(), storageVariables=dict(), address=""):
-        # print(self)
-        if self.encoding=="dynamic_array":
-            print("***********************")
-            print(self.elements)
-            storageVariables[toHex(self.slot)] = dict()
-            storageVariables[toHex(self.slot)]["VarName"] = self.name
-            storageVariables[toHex(self.slot)]["Label"] = self.label
-            storageVariables[toHex(self.slot)]["Elements"] = self.elements
-            print("***********************")
-        
-        elif self.encoding == "mapping":
-            print("***********************")
-            print(
-            "Slot: {0}\n Offset: {1}\n BytesSize: {2}\n VarName: {3}\n Label: {4}".
-            format(toHex(self.slot), toHex(self.offset), self.numOfBytes, self.name, self.label)
-            )
-
-            storageVariables[toHex(self.slot)] = dict()
-            storageVariables[toHex(self.slot)]["VarName"] = self.name
-            storageVariables[toHex(self.slot)]["Label"] = self.label
-            storageVariables[toHex(self.slot)]["TaintedKeys"] = self.taintedKeys
-
-            if self.name:
-                globalTaintedKeysRecorderSet[self.name] = self
-            print("Tainted Keys: {0}".format(self.taintedKeys))
-            # print(toHex(self.slot), toHex(self.offset), self.numOfBytes, self.name, self.label)
-            for key in self.values:
-                print(">>>key:", key)
-                print("   value: ")
-                if self.values[key].isStruct():
-                    # print("{0}:".format(key))
-                    self.values[key].value.printStorageVariables(address)
-                else:
-                    self.values[key].printData()
-            print("***********************")
-        else:
-            if self.isStruct():
-                self.value.printStorageVariables(address)
-            else:
-                if self.name:
-                    print(
-                    "Slot: {0}\n Offset: {1}\n BytesSize: {2}\n VarName: {3}\n Label: {4}\n Value: {5}".
-                    format(toHex(self.slot), toHex(self.offset), self.numOfBytes, self.name, self.label, toHex(self.value, size=self.numOfBytes*2))
-                    )
-                    storageVariables[toHex(self.slot)] = dict()
-                    storageVariables[toHex(self.slot)]["VarName"] = self.name
-                    storageVariables[toHex(self.slot)]["Label"] = self.label
-                else:
-                    print(
-                    "Slot: {0}\n Offset: {1}\n BytesSize: {2}\n Label: {3}\n Value: {4}".
-                    format(toHex(self.slot), toHex(self.offset), self.numOfBytes,  self.label, toHex(self.value, size=self.numOfBytes*2))
-                    )
-                    storageVariables[toHex(self.slot)] = dict()
-                    storageVariables[toHex(self.slot)]["VarName"] = self.name
-                    storageVariables[toHex(self.slot)]["Label"] = self.label
             
 def createTypeClasses(types):
     global ClassMapping
@@ -508,7 +439,6 @@ def createTypeClasses(types):
                     "setValueForArrayMappingValue": setValueForArrayMappingValue,
                     "setValueForInplaceStructValue": setValueForInplaceStructValue,
                     "setValueForBytes": setValueForBytes,
-                    "printData": printData
                 }
             )
         except:
@@ -517,7 +447,6 @@ def createTypeClasses(types):
             # pass 
             raise Exception("Unsupported type")
     pass 
-
 
 class ContractStorageMonitor:
     
@@ -605,8 +534,8 @@ class ContractStorageMonitor:
         assert value.startswith("0x")==True, "value should be hex string"
         assert isinstance(slot, str), "slot should be hex string"
         assert slot.startswith("0x")==True, "slot should be hex string"
-        if config.DEBUG:
-            print(">>>Update storage.\n Slot: {0}\n Value: {1}".format(slot, value))
+        # if config.DEBUG:
+        #     print(">>>Update storage.\n Slot: {0}\n Value: {1}".format(slot, value))
         isRoot = False
         if value.find("-")!=-1:
             # this is a root entry for state change read 
@@ -636,97 +565,11 @@ class ContractStorageMonitor:
                 # print(f"{slot} not found")
             return False 
 
-    def _before(self, funcName, msg_sender, msg_value,  args, failedFlag, blockNumberindex):
-        if config.DEBUG:
-            print("before:")
-    
-    def _after(self, funcName, msg_sender, msg_value, args, failedFlag, blockNumberindex):
-        if config.DEBUG:
-            print("after:")
-        
-    def txStateTransition(self, slot_statechanges, funcName, additionalKeys, msg_sender, msg_value, args, showflag=False, blockNumberindex=None):
-        failedFlag = len(slot_statechanges) == 0
-        if showflag:
-            self._before(funcName=funcName, msg_sender=msg_sender, msg_value=msg_value, args = args, failedFlag=failedFlag, blockNumberindex=blockNumberindex)
+    def txStateTransition(self, slot_statechanges, additionalKeys):
         for slot_statechange in slot_statechanges:
                 slot, state = tuple(slot_statechange.split(":"))
                 self.readStateChange(slot, state, additionalKeys=additionalKeys)
-        if showflag:
-            self._after(funcName=funcName, msg_sender=msg_sender,  msg_value=msg_value, args = args, failedFlag=failedFlag, blockNumberindex=blockNumberindex)
 
-    def printStorageVariables(self, address):
-        if True:
-        # if config.DEBUG:
-            storageVariables = dict()
-            globalTaintedKeysRecorderSet = dict()
-            print("Contract Storage>>>>")
-            for _slot in self.grid_storages.keys():
-                for _offset in self.grid_storages[_slot].keys():
-                    self.grid_storages[_slot][_offset].printData(globalTaintedKeysRecorderSet=globalTaintedKeysRecorderSet, storageVariables=storageVariables, address=address)
-        
-            def clearEmpyList(taintedKeys):
-                newTaintedKeys = list()
-                hasNestedTaintedKeys = False
-                for ele in taintedKeys:
-                    if isinstance(ele, list) and len(ele) == 0:
-                        continue
-                    elif isinstance(ele, list) and len(ele) > 0:
-                        ele, _ = clearEmpyList(ele)
-                        hasNestedTaintedKeys = True 
-                        newTaintedKeys.append(ele)
-                    else:
-                        newTaintedKeys.append(ele)
-                return newTaintedKeys, hasNestedTaintedKeys
-
-            def ERC20TokenContextSlicing(balancesKeys, allowanceKeys):
-                slicingKeysPairSet = set()
-                secondKey = ""
-                for primaryKey in balancesKeys:
-                    for sender in allowanceKeys.keys():
-                        if primaryKey in allowanceKeys[sender]:
-                            secondKey = sender
-                    
-                    slicingKeysPairSet.add((primaryKey, secondKey))
-                
-                for sender in allowanceKeys.keys():
-                        for primaryKey in allowanceKeys[sender]:
-                            slicingKeysPairSet.add((primaryKey, sender))
-                print(slicingKeysPairSet)
-                return slicingKeysPairSet
-
-            isERC20 = True 
-            if isERC20:
-                balancesKeys = list()
-                allowanceKeys = dict()
-            for taintedMappingVar in globalTaintedKeysRecorderSet.keys():
-                taintedKeys = globalTaintedKeysRecorderSet[taintedMappingVar].taintedKeys
-                newTaintedKeys, hasNestedTaintedKeys = clearEmpyList(taintedKeys)
-                if not hasNestedTaintedKeys:
-                    newTaintedKeys = list(set(newTaintedKeys))
-                    if isERC20:
-                        balancesKeys = newTaintedKeys
-                else:
-                    # maping(xxx=>mapping(xxx=> xxx))
-                    taintedKeys = dict()
-                    for i in range(0, len(newTaintedKeys), 2):
-                        if newTaintedKeys[i] not in taintedKeys.keys():
-                            taintedKeys[newTaintedKeys[i]] = list(set(newTaintedKeys[i+1]))
-                        else:
-                            taintedKeys[newTaintedKeys[i]] = list(set(newTaintedKeys[i+1]).union(taintedKeys[newTaintedKeys[i]]))
-                    newTaintedKeys = taintedKeys
-                    if isERC20:
-                        allowanceKeys = newTaintedKeys
-                print("MappingVar: {0}\n hasNestedTaintedKeys: {1}\n TaintedKeys: {2}\n".
-                format(taintedMappingVar, hasNestedTaintedKeys,  newTaintedKeys)
-                )
-
-            ERC20TokenContextSlicing(balancesKeys=balancesKeys, allowanceKeys=allowanceKeys)
-            
-            # print(storageVariables)
-            # if not os.path.exists(f"/home/fangzy/workplace/slotExtractor/invs/{address}"):
-            #     os.mkdir(f"/home/fangzy/workplace/slotExtractor/invs/{address}")
-            # with open(f"/home/fangzy/workplace/slotExtractor/invs/{address}/storageVar2.json", "w+") as f:
-            #     f.write(json.dumps(storageVariables))
 
 def isString(v_type):
     return  v_type.find("address")!=-1 or v_type.find("bytes")!=-1 or  v_type.find("contract")!=-1
@@ -737,220 +580,80 @@ def isArray(v_type):
     return  v_type.find("[")!=-1
 
 class Contract(ContractStorageMonitor):
-    def __init__(self, workdir, contractName, storageLayoutJson, input_abi, input_state_change, input_tx_receipt):
+    def __init__(self, address, blockNumber, Index, workdir, contractName, storageLayoutJson, input_state_change, input_tx_receipt):
         assert os.path.exists(storageLayoutJson)
-        assert os.path.exists(input_abi)
         assert os.path.exists(input_tx_receipt)
         assert os.path.exists(input_state_change)
-        self.workdir = workdir
+        
         layoutjson = json.load(open(storageLayoutJson))
         types = layoutjson["types"]
         storage = layoutjson["storage"]
 
         super().__init__(typeJson=types, storageJson = storage)
-
-        self.tx_abi = json.load(open(input_abi)) 
         self.tx_receipts = json.load(open(input_tx_receipt))
         if "result" in self.tx_receipts:
                 self.tx_receipts = self.tx_receipts["result"]
         
+        self.address = address
+        workdir = os.path.abspath(workdir)
+        self.workdir = workdir
+        if not os.path.exists(self.workdir):
+            os.mkdir(self.workdir)
+        self.addressdir = f"{self.workdir}/{self.address}"
+
         self.contractName = contractName
         self.input_state_change = input_state_change
+        self.blockNumber = blockNumber
+        self.index = Index
 
         self.tx_blockNumber_index_before_after_contractStatesDataTraces = dict()
-
-    def readTransactionFunctionInputVariables(self, blockNumber_index, nonce):
-        def _get_full_function_name(name, inputs):
-                    ret = name 
-                    argtyps = []
-                    for item in inputs:
-                        argtyps.append(item["type"])
-                    return name +"("+",".join(argtyps)+")"
-       
-        tx = list(filter(lambda tx: (tx["blockNumber"]+"_"+tx["transactionIndex"]) == blockNumber_index, self.tx_receipts))[0]
         
-        if "decoded" not in tx:
-            return [], [], [], [], [], None 
-
-        assert "decoded" in tx, "no decoded parameters" 
-        # if "type" in tx and tx["type"] == INTERNAL_TRANSACTION:
-        #     decoded =  tx[INTERNAL_TRANSACTION][0]["decoded"]
-        # else:
-        #     decoded = tx["decoded"]
-        decoded = tx["decoded"]
-        args = decoded["args"]
-        if isinstance(args, dict):
-            for _var in args.keys():
-                if isinstance(args[_var], str):
-                    args[_var] = args[_var].lower()
-                    self.envs.add(args[_var])
-                elif isinstance(args[_var], list):
-                    self.envs.update(args[_var])
-                elif isinstance(args[_var], int):
-                    self.envs.add(args[_var])
-                else:
-                    assert False, f"Unsupported parameter type of {_var} of values {args[_var]}" 
-        # print(decoded["function"], args)
-        if decoded["function"] == "constructor":
-            return [], [], [], [], args, None 
-
-        dtrace = []
-
-        try:
-            functionABI = list(filter(lambda function: function["type"] == "function"  and function["name"]==decoded["function"], self.tx_abi))[0]
-            
-            enter = ["""{0}.{1}:::ENTER
-this_invocation_nonce
-{2}""".format(self.contractName, _get_full_function_name(decoded["function"], functionABI["inputs"]), nonce)]
-        
-            exit1 = ["""{0}.{1}:::EXIT1
-this_invocation_nonce
-{2}""".format(self.contractName, _get_full_function_name(decoded["function"], functionABI["inputs"]), nonce)]
-        
-            exit2 = ["""{0}.{1}:::EXIT2
-this_invocation_nonce
-{2}""".format(self.contractName, _get_full_function_name(decoded["function"], functionABI["inputs"]), nonce)]
-        
-            length = int(args["__length__"])
-
-            if length>0:
-                ignore = set([ "{0}".format(i) for i in range(length)])
-                ignore.add("__length__")
-            
-                variables = list(filter(lambda key: key not in ignore, args))
-                
-                for var in variables:
-                    
-                    var_type = list(filter(lambda input: input["name"]==var, functionABI["inputs"]))[0]["type"]
-                    
-                    if not isArray(var_type):
-                        # %(10**27)
-                        v = """{0}  
-{1}
-1""".format(var, "\"{0}\"".format(args[var]) if isString(var_type) else str(int(args[var])) if not isBool(var_type) else 1 if args[var] else 0) 
-                        dtrace.append(v)
-                    else:
-                        _vars = args[var]
-                        _vars = ["\"{0}\"".format(str(_var)) if isString(var_type) else  str(int(_var))  if not isBool(var_type) else 1 if _var else 0 for _var in _vars]
-                        v = """{0}  
-{1}
-1""".format(var, 123456) 
-                        dtrace.append(v)
-                        v = """{0}[..]  
-[{1}]
-1""".format(var, " ".join(_vars)) 
-                        dtrace.append(v)
-        
-            return enter, exit1, exit2, dtrace, args, decoded["function"]
-        except:
-            # fallback function
-            # traceback.print_exc()
-            # print("tx:", tx["blockNumber"]+"_"+tx["transactionIndex"], "decoded function:", decoded)
-            return [], [], [], [], args, None 
-
-    def readTransactionEnvironmentVariables(self, blockNumber_index):
+    def addTxEnvVar(self, blockNumber_index):
         try:
             tx = list(filter(lambda tx: (tx["blockNumber"]+"_"+tx["transactionIndex"]) == blockNumber_index, self.tx_receipts))[0]
         except:
             traceback.print_exc()
-       
-        if "type" in tx and tx["type"] == INTERNAL_TRANSACTION:
-            if len(tx[INTERNAL_TRANSACTION])==0:
-                self.envs.add(tx["from"].lower())
-                return tx["from"].lower(), None,  None
-            elif len(tx[INTERNAL_TRANSACTION])!=1:
-                for interntx in tx[INTERNAL_TRANSACTION]:
-                    self.envs.add(interntx["action"]["from"].lower()) 
-                    decoded = interntx["decoded"]
-                    args = decoded["args"]
-                    if isinstance(args, dict):
-                        for _var in args.keys():
-                            if isinstance(args[_var], str):
-                                args[_var] = args[_var].lower()
-                                self.envs.add(args[_var])
-                            elif isinstance(args[_var], list):
-                                self.envs.update(args[_var])
-                            elif isinstance(args[_var], int):
-                                self.envs.add(args[_var])
-                            else:
-                                assert False, f"Unsupported parameter type of {_var} of values {args[_var]}" 
-                users = [ interntx["action"]["from"].lower() for interntx in tx[INTERNAL_TRANSACTION]]
-                return users, None,  None
-            else:
-                interntx = tx[INTERNAL_TRANSACTION][0]["action"]
-                dtrace = []
-                v = """msg.sender
-"{0}"
-1""".format(interntx["from"].lower()) 
-                dtrace.append(v)
-                v = """msg.value
-{0}
-1""".format(interntx["value"] if not interntx["value"].startswith("0x") else str(int(interntx["value"],16))) 
-                dtrace.append(v)
-                v = """block.timestamp
-{0}
-1""".format(tx["timeStamp"] if not tx["timeStamp"].startswith("0x") else str(int(tx["timeStamp"],16))) 
-                dtrace.append(v)
-                self.envs.add(interntx["from"].lower())
-                return interntx["from"].lower(), interntx["value"], dtrace
-        else:
-            dtrace = []
-            v = """msg.sender
-"{0}"
-1""".format(tx["from"].lower()) 
-            dtrace.append(v)
-            v = """msg.value
-{0}
-1""".format(tx["value"]) 
-            dtrace.append(v)
-            v = """block.timestamp
-{0}
-1""".format(tx["timeStamp"]) 
-            dtrace.append(v)
-            self.envs.add(tx["from"].lower())
-            return tx["from"].lower(), tx["value"], dtrace
+        
+        callList = tx["callList"]
+        for txCall in callList:
+            self.envs.add(txCall["from"].lower())
+            args = txCall["args"]
+            for arg in args:
+                if isinstance(arg, dict):
+                    if isinstance(arg["content"], str):
+                        arg["content"] = arg["content"].lower()
+                        self.envs.add(arg["content"])
+                    elif isinstance(arg["content"], list):
+                        self.envs.update(arg["content"])
+                    elif isinstance(arg["content"], int):
+                        self.envs.add(arg["content"])
+                    else:
+                        content = arg["content"]
+                        assert False, f"Unsupported parameter type of arg[content] of values {content}"
 
-    def readAllTxs(self, address):
+    def readAllTxs(self):
         statechanges = open(self.input_state_change).read().strip().split("BlockNumber_TxIndex:")[1:]
         self.envs = set() 
-        LIMIT = config.ParserReadTransactionLimit
-        nounce = 0
-        count = 0
         handled_BlockNumber_TxIndex_set = set()
-        with alive_bar(min(LIMIT, len(statechanges)), force_tty=True) as bar:
-            for tx_statechange in statechanges[:min(LIMIT, len(statechanges))]:
+        with alive_bar(len(statechanges), force_tty=True) as bar:
+            for tx_statechange in statechanges:
                 self.envs = set() 
                 blockNumber_index = tx_statechange.strip().split("\n")[0]
                 if blockNumber_index in handled_BlockNumber_TxIndex_set:
                     bar()
                     continue
                 handled_BlockNumber_TxIndex_set.add(blockNumber_index)
-                msg_sender, msg_value, dtraceEnvs = self.readTransactionEnvironmentVariables(blockNumber_index)
-            
-                enter,exit1, exit2 = [], [], []
 
-                if msg_sender is not None and dtraceEnvs is not None:
-                    enter, exit1, exit2, dtraceParameters, args, funcName = self.readTransactionFunctionInputVariables(blockNumber_index, nounce)
+                self.addTxEnvVar(blockNumber_index)
 
-                if count>0:
-                    nounce += 1
-                
-                showflag = False 
-                if count>0 and len(enter)>0 and len(exit1)>0 and len(exit2)>0:
-                    showflag = True 
-                
                 self.envs.update(self.getAllInplaceValues())
                 
                 slot_statechanges = tx_statechange.strip().split("\n")[1:]
-                self.txStateTransition(slot_statechanges = slot_statechanges, funcName = funcName, additionalKeys=self.envs, msg_sender=msg_sender, msg_value = msg_value, args = args, showflag=showflag, blockNumberindex= blockNumber_index)
 
-                count += 1
+                self.txStateTransition(slot_statechanges = slot_statechanges, additionalKeys=self.envs)
+
                 bar()
-                if count > LIMIT:
-                    break
         
-        # for slot, storage in self.storages_slot:
-        #     print(slot, storage)
         slot_storages = dict()
         for slot in self.storages_slot:
             slot_storages[slot] = dict()
@@ -958,7 +661,45 @@ this_invocation_nonce
             slot_storages[slot]["type"] = self.storages_slot[slot].type_identifier
             # print('\n'.join(['{0}: {1}'.format(item[0], item[1]) for item in self.storages_slot[slot].__dict__.items()]))
             # print(slot, item.lable, item.type)
-        if not os.path.exists(f"/home/fangzy/workplace/slotExtractor/invs/{address}"):
-            os.mkdir(f"/home/fangzy/workplace/slotExtractor/invs/{address}")
-        with open(f"/home/fangzy/workplace/slotExtractor/invs/{address}/storageVar.json", "w+") as f:
+        if not os.path.exists(self.addressdir):
+            os.mkdir(self.addressdir)
+        with open(f"{self.addressdir}/storageVar.json", "w+") as f:
             f.write(json.dumps(slot_storages))
+
+    def slotReplace(self):
+        storageVar = json.load(open(f"{self.addressdir}/storageVar.json"))
+
+        if os.path.exists(f"{self.addressdir}/var_dict_new.json"):
+            var_dict = json.load(open(f"{self.addressdir}/var_dict_new.json"))
+        else:
+            var_dict = json.load(open(f"{self.addressdir}/var_dict.json"))
+
+        for blockIndex in var_dict:
+            blockNumber, Index = blockIndex.split("_")
+            # if blockNumber > self.blockNumber or (blockNumber == self.blockNumber and self.index > Index):
+            #     break
+            if self.blockNumber == blockNumber and self.index == Index:
+                pre_storage = var_dict[blockIndex]["pre"]["storage"]
+                post_storage = var_dict[blockIndex]["post"]["storage"]
+                for address_slot in pre_storage:
+                    address, slot = address_slot.split("_")
+                    if(address == self.address):
+                        value = pre_storage[address_slot]
+                        if slot in storageVar:
+                            var_dict[blockIndex]["pre"]["storage"][address_slot] =  dict()
+                            var_dict[blockIndex]["pre"]["storage"][address_slot]["name"] = storageVar[slot]["name"]
+                            var_dict[blockIndex]["pre"]["storage"][address_slot]["type"] = storageVar[slot]["type"]
+                            var_dict[blockIndex]["pre"]["storage"][address_slot]["value"] = value
+                
+                for address_slot in post_storage:
+                    address, slot = address_slot.split("_")
+                    if(address == self.address):
+                        value = post_storage[address_slot]
+                        if slot in storageVar:
+                            var_dict[blockIndex]["post"]["storage"][address_slot] =  dict()
+                            var_dict[blockIndex]["post"]["storage"][address_slot]["name"] = storageVar[slot]["name"]
+                            var_dict[blockIndex]["post"]["storage"][address_slot]["type"] = storageVar[slot]["type"]
+                            var_dict[blockIndex]["post"]["storage"][address_slot]["value"] = value
+
+        with open(f"{self.addressdir}/var_dict_new.json", "w+") as f:
+            f.write(json.dumps(var_dict))

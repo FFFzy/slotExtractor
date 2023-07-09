@@ -1,4 +1,7 @@
-./invs
-./input
-./tmp
-./nodejs/node_modules
+invs/
+input/
+tmp/
+nodejs/node_modules/
+__pycache__/
+
+script.ipynb
