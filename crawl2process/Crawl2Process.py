@@ -269,7 +269,7 @@ class Crawler:
     
     def getStateChanges(self):
         allStateChanges = list()
-        slot_value = dict()
+        # slot_value = dict()
         for transaction in self.transactions:
             stateChanges = list(["BlockNumber_TxIndex:" + transaction["blockNumber"] + "_" + transaction["transactionIndex"]])
             post_storage = transaction["post"]["storage"]
@@ -277,12 +277,14 @@ class Crawler:
                 address, slot = address_slot.split("_")
                 if(address == self.address):
                     value = toHex(post_storage[address_slot], 64)
-                    if slot not in slot_value:
-                        if value != "0x0000000000000000000000000000000000000000000000000000000000000000":
-                            stateChanges.append(":".join([slot, "0x0000000000000000000000000000000000000000000000000000000000000000" + "-" + value]))
-                    elif slot_value[slot] != value:
-                        stateChanges.append(":".join([slot, slot_value[slot] + "-" + value]))
-                    slot_value[slot] = value
+
+                    stateChanges.append(":".join([slot, value]))
+                    # if slot not in slot_value:
+                    #     if value != "0x0000000000000000000000000000000000000000000000000000000000000000":
+                    #         stateChanges.append(":".join([slot, "0x0000000000000000000000000000000000000000000000000000000000000000" + "-" + value]))
+                    # elif slot_value[slot] != value:
+                    #     stateChanges.append(":".join([slot, slot_value[slot] + "-" + value]))
+                    # slot_value[slot] = value
             allStateChanges.extend(stateChanges)
         
         with open(f"{self.addressdir}/statechanges.txt", "w") as fo:

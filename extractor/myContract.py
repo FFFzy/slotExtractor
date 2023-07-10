@@ -450,9 +450,12 @@ def createTypeClasses(types):
 
 class ContractStorageMonitor:
     
-    def __init__(self, storageJson, slot=0, typeJson = None):
+    def __init__(self, storageJson, slot=0, typeJson = None, blockNumber=0, index=0):
         global ClassMapping
         
+        self.blockNumber = blockNumber
+        self.index = index
+
         if typeJson is not None:
             try:
                 if type(storageJson) == int:
@@ -536,19 +539,23 @@ class ContractStorageMonitor:
         assert slot.startswith("0x")==True, "slot should be hex string"
         # if config.DEBUG:
         #     print(">>>Update storage.\n Slot: {0}\n Value: {1}".format(slot, value))
-        isRoot = False
-        if value.find("-")!=-1:
+        # isRoot = False
+        # if value.find("-")!=-1:
             # this is a root entry for state change read 
-            oldval, value = value.split("-")
-            isRoot = True 
-            # print("availableslots", self.availableslots)
-            if slot in self.availableslots:
-                if self.availableslots[slot] != oldval.strip():
-                    assert False, f"the recorded value of {slot} is inconsistent. recorded: {self.availableslots[slot]} vs actual: {oldval}"
+            # oldval, value = value.split("-")
+            # isRoot = True 
+            # # print("availableslots", self.availableslots)
+            # if slot in self.availableslots:
+            #     if self.availableslots[slot] != oldval.strip():
+            #         assert False, f"the recorded value of {slot} is inconsistent. recorded: {self.availableslots[slot]} vs actual: {oldval}"
             # else:
             #     assert int(oldval, base=16) == 0, f"the recorded value of {slot} is inconsistent. recorded: {0} vs actual: {oldval}"
-        hit = True
+        hit = False
+
         for storageItem in self.storages:
+            # if self.blockNumber + "_" + self.index == "13672708_275":
+            if slot == "0xd7b6990105719101dabeb77144f2a3385c8033acd3af97e9423a695e81ad1ebb" and storageItem.setValue(slot, value, additionalKeys):
+                print(slot, value, self.blockNumber)
             if storageItem.setValue(slot, value, additionalKeys):
                 if slot not in self.storages_slot:
                     self.storages_slot[slot] = storageItem
@@ -558,11 +565,11 @@ class ContractStorageMonitor:
                 # return True 
         if hit:
             # print(f"{slot} is hit")
-            self.availableslots[slot] = value 
+            # self.availableslots[slot] = value 
             return True 
         else:
             # if isRoot:
-                # print(f"{slot} not found")
+            #     print(f"{slot} not found")
             return False 
 
     def txStateTransition(self, slot_statechanges, additionalKeys):
@@ -589,7 +596,7 @@ class Contract(ContractStorageMonitor):
         types = layoutjson["types"]
         storage = layoutjson["storage"]
 
-        super().__init__(typeJson=types, storageJson = storage)
+        super().__init__(typeJson=types, storageJson = storage, blockNumber = blockNumber, index = Index)
         self.tx_receipts = json.load(open(input_tx_receipt))
         if "result" in self.tx_receipts:
                 self.tx_receipts = self.tx_receipts["result"]
@@ -635,36 +642,44 @@ class Contract(ContractStorageMonitor):
         statechanges = open(self.input_state_change).read().strip().split("BlockNumber_TxIndex:")[1:]
         self.envs = set() 
         handled_BlockNumber_TxIndex_set = set()
-        with alive_bar(len(statechanges), force_tty=True) as bar:
-            for tx_statechange in statechanges:
-                self.envs = set() 
-                blockNumber_index = tx_statechange.strip().split("\n")[0]
-                if blockNumber_index in handled_BlockNumber_TxIndex_set:
-                    bar()
-                    continue
-                handled_BlockNumber_TxIndex_set.add(blockNumber_index)
+        # with alive_bar(len(statechanges), force_tty=True) as bar:
+        for tx_statechange in statechanges:
+            self.envs = set() 
+            blockNumber_index = tx_statechange.strip().split("\n")[0]
+            if blockNumber_index in handled_BlockNumber_TxIndex_set:
+                # bar()
+                continue
+            handled_BlockNumber_TxIndex_set.add(blockNumber_index)
 
-                self.addTxEnvVar(blockNumber_index)
+            self.addTxEnvVar(blockNumber_index)
 
-                self.envs.update(self.getAllInplaceValues())
-                
-                slot_statechanges = tx_statechange.strip().split("\n")[1:]
+            self.envs.update(self.getAllInplaceValues())
+            
+            slot_statechanges = tx_statechange.strip().split("\n")[1:]
 
-                self.txStateTransition(slot_statechanges = slot_statechanges, additionalKeys=self.envs)
+            self.txStateTransition(slot_statechanges = slot_statechanges, additionalKeys=self.envs)
 
-                bar()
-        
-        slot_storages = dict()
+            # bar()
+
+        if not os.path.exists(f"{self.addressdir}/storageVar.json"):
+            storageVar = dict()
+        else:
+            storageVar = dict(json.load(open(f"{self.addressdir}/storageVar.json")))
+        # slot_storages = dict()
         for slot in self.storages_slot:
-            slot_storages[slot] = dict()
-            slot_storages[slot]["name"] = self.storages_slot[slot].name
-            slot_storages[slot]["type"] = self.storages_slot[slot].type_identifier
+            if slot not in storageVar:
+                storageVar[slot] = dict()
+                storageVar[slot]["name"] = self.storages_slot[slot].name
+                storageVar[slot]["type"] = self.storages_slot[slot].type_identifier
+            # slot_storages[slot] = dict()
+            # slot_storages[slot]["name"] = self.storages_slot[slot].name
+            # slot_storages[slot]["type"] = self.storages_slot[slot].type_identifier
             # print('\n'.join(['{0}: {1}'.format(item[0], item[1]) for item in self.storages_slot[slot].__dict__.items()]))
             # print(slot, item.lable, item.type)
         if not os.path.exists(self.addressdir):
             os.mkdir(self.addressdir)
         with open(f"{self.addressdir}/storageVar.json", "w+") as f:
-            f.write(json.dumps(slot_storages))
+            f.write(json.dumps(storageVar))
 
     def slotReplace(self):
         storageVar = json.load(open(f"{self.addressdir}/storageVar.json"))
