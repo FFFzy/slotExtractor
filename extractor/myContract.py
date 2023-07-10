@@ -554,8 +554,8 @@ class ContractStorageMonitor:
 
         for storageItem in self.storages:
             # if self.blockNumber + "_" + self.index == "13672708_275":
-            if slot == "0xd7b6990105719101dabeb77144f2a3385c8033acd3af97e9423a695e81ad1ebb" and storageItem.setValue(slot, value, additionalKeys):
-                print(slot, value, self.blockNumber)
+            # if slot == "0xd7b6990105719101dabeb77144f2a3385c8033acd3af97e9423a695e81ad1ebb" and storageItem.setValue(slot, value, additionalKeys):
+            #     print(slot, value, self.blockNumber)
             if storageItem.setValue(slot, value, additionalKeys):
                 if slot not in self.storages_slot:
                     self.storages_slot[slot] = storageItem
